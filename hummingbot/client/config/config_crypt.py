@@ -44,21 +44,21 @@ class BaseSecretsManager(ABC):
 
 class ETHKeyFileSecretManger(BaseSecretsManager):
     def encrypt_secret_value(self, attr: str, value: str):
-        if self._password is None:
+        """ if self._password is None:
             raise ValueError(f"Could not encrypt secret attribute {attr} because no password was provided.")
         password_bytes = self._password.encode()
         value_bytes = value.encode()
         keyfile_json = _create_v3_keyfile_json(value_bytes, password_bytes)
         json_str = json.dumps(keyfile_json)
-        encrypted_value = binascii.hexlify(json_str.encode()).decode()
-        return encrypted_value
+        encrypted_value = binascii.hexlify(json_str.encode()).decode() """
+        return value
 
     def decrypt_secret_value(self, attr: str, value: str) -> str:
-        if self._password is None:
+        """ if self._password is None:
             raise ValueError(f"Could not decrypt secret attribute {attr} because no password was provided.")
         value = binascii.unhexlify(value)
-        decrypted_value = Account.decrypt(value.decode(), self._password).decode()
-        return decrypted_value
+        decrypted_value = Account.decrypt(value.decode(), self._password).decode() """
+        return value
 
 
 def store_password_verification(secrets_manager: BaseSecretsManager):
