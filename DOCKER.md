@@ -1,5 +1,5 @@
 # Docker Instructions
-docker build -f Dockerfile.arm -t bardakdev/hb_pg .
+
 Compiled versions of `hummingbot` are available on Docker Hub at [`coinalpha/hummingbot`](https://hub.docker.com/r/coinalpha/hummingbot).
 
 ## Running `hummingbot` with Docker
